@@ -5,7 +5,7 @@
     <img src="{{ asset('images/lentes1.jpg') }}" class="w-screen h-screen object-cover">
 
     <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-      <h1 class="text-gray-500 text-4xl font-bold">CLINICA ÓPTICA</h1>
+      <h1 class="text-white text-4xl font-bold">CLINICA ÓPTICA</h1>
     </div>
   </div>
 

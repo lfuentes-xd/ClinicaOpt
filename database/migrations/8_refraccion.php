@@ -30,12 +30,16 @@ return new class extends Migration
             $table->String('OIav');
 
             //Retinoscopia
-            $table->String('oi');
-            $table->String('od');
+            $table->String('oir');
+            $table->String('odr');
 
             //torcidad
             $table->String('Tod');
             $table->String('Toi');
+
+            //Miras
+            $table->String('Mod');
+            $table->String('Moi');
 
             //dosificacion
             $table->String('ODerd');

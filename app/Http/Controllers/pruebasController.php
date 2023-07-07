@@ -79,7 +79,7 @@ class pruebasController extends Controller
         $nuevoR->RETINAD=$request->RetinaD;
 
         $nuevoR->save();
-        return redirect('/historial');
+        return redirect()->action([refraccionController::class, 'create']);
 
     }
 

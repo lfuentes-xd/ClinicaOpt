@@ -69,9 +69,9 @@
         <div class="lg:w-1/2 xl:w-1/2 sm:w-full"><!-- hijo-->
 
             <div class="relative mb-3 w-full">
-                <input type="text" id="ADD" name="ADD" required
+                <input type="text" id="ADDO" name="ADDO" required
                     class="caja">
-                <label for="ADD"
+                <label for="ADDO"
                     class="etiqueta">ADD</label>
             </div>
 
@@ -83,9 +83,9 @@
             </div>
 
             <div class="relative mb-3 w-full">
-                <input type="text" id="FLC-1" name="FLC-1" required
+                <input type="text" id="FLC1" name="FLC1" required
                     class="caja">
-                <label for="FLC-1"
+                <label for="FLC1"
                     class="etiqueta">FLC-100</label>
             </div>
 
@@ -138,55 +138,77 @@ M I T A D
 
     <div class="lg:w-1/2 xl:w-1/2 lg:flex xl:flex sm:block sm:w-full"> <!-- padre 2-->
 
-        <div class="lg:w-1/2 xl:w-1/2 sm:w-full"><!-- hijo-->
+        <div class="lg:w-full xl:w-full sm:w-full"><!-- hijo-->
 
             <div class="relative mb-3 w-full">
-                <input type="text" id="PPCNA" name="PPCNA" required
+                <input type="text" id="AO" name="AO" required
                     class="caja">
-                <label for="PPCNA"
-                    class="etiqueta">P.P.C.N.A</label>
+                <label for="AO"
+                    class="etiqueta">AO</label>
             </div>
 
             <div class="relative mb-3 w-full">
-                <input type="text" id="AA" name="AA" required
+                <input type="text" id="ODER" name="ODER" required
                     class="caja">
-                <label for="AA"
-                    class="etiqueta">A.A O.der</label>
+                <label for="ODER"
+                    class="etiqueta">O.DER</label>
+            </div>
+
+            <div class="relative mb-3 w-full">
+                <input type="text" id="OIZQ" name="OIZQ" required
+                    class="caja">
+                <label for="OIZQ"
+                    class="etiqueta">O.IZQ</label>
+            </div>
+
+            <div class="lg:w-full xl:w-full sm:w-full"><!-- hijo-->
+
+                <div class="relative mb-3 w-full">
+                    <input type="text" id="PPCNA" name="PPCNA" required
+                        class="caja">
+                    <label for="PPCNA"
+                        class="etiqueta">P.P.C.N.A</label>
+                </div>
+
+                <div class="relative mb-3 w-full">
+                    <input type="text" id="AA" name="AA" required
+                        class="caja">
+                    <label for="AA"
+                        class="etiqueta">A.A O.der</label>
+                </div>
+
+            </div>
+
+            <div class="lg:w-full xl:w-full sm:w-full"><!-- hijo-->
+
+                <div class="relative mb-3 w-full">
+                    <input type="text" id="PPCA" name="PPCA" required
+                        class="caja">
+                    <label for="PPCA"
+                        class="etiqueta">P.P.C.A</label>
+                </div>
+
+                <div class="relative mb-3 w-full">
+                    <input type="text" id="Izq" name="Izq" required
+                        class="caja">
+                    <label for="Izq"
+                        class="etiqueta">O.Izq</label>
+                </div>
+
             </div>
 
 
         </div>
 
-        <div class="lg:w-1/2 xl:w-1/2 sm:w-full"><!-- hijo-->
-
-            <div class="relative mb-3 w-full">
-                <input type="text" id="PPCA" name="PPCA" required
-                    class="caja">
-                <label for="PPCA"
-                    class="etiqueta">P.P.C.A</label>
-            </div>
-
-            <div class="relative mb-3 w-full">
-                <input type="text" id="Izq" name="Izq" required
-                    class="caja">
-                <label for="Izq"
-                    class="etiqueta">O.Izq</label>
-            </div>
-
-        </div>
 
     </div>
 
 </div>
 
 <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 text-center">
-    <a class="inline-block bg-red-600 hover:bg-red-600 text-black font-semibold py-2 px-4 rounded"
-        href="{{ url('historial') }}" role="button">
-        <i class="fi fi-rr-cross-circle"></i>
-    Cancelar</a>
 
     <button type="submit"
-        class="prim">
+        class="prim tran">
         Siguiente
         <i class="fi fi-rr-angle-right"></i>
     </button>

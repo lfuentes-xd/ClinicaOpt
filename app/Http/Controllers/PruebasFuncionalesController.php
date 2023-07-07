@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\refraccion;
+use App\Models\PruebasFuncionales;
 
-class refraccionController extends Controller
+class PruebasFuncionalesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class refraccionController extends Controller
      */
     public function create()
     {
-        return view('refraccion.alta');
+        return view('Pruebas_Funcionales.alta');
     }
 
     /**
@@ -28,7 +28,7 @@ class refraccionController extends Controller
      */
     public function store(Request $request)
     {
-        $nuevoR = new refraccion;
+        $nuevoR = new PruebasFuncionales;
 
         $nombre = session('nombre');
         $apellido = session('apellido');
@@ -36,33 +36,35 @@ class refraccionController extends Controller
         $nuevoR->nombrePac=$nombre;
         $nuevoR->apellidosPac=$apellido;
 
-        $nuevoR->OD=$request->OD;
-        $nuevoR->OI=$request->IZ;
-        $nuevoR->ODI=$request->ODI;
-        $nuevoR->OII=$request->OII;
+        $nuevoR->FLL= $request->FLL;
+        $nuevoR->FVL=$request->FVL;
+        $nuevoR->VLL=$request->VLL;
+        $nuevoR->BNL=$request->BNL;
+        $nuevoR->BTL=$request->BTL;
+        $nuevoR->CCF=$request->CCF;
+        $nuevoR->ARN=$request->ARN;
+        $nuevoR->ARP=$request->ARP;
+        $nuevoR->ADDO=$request->ADDO;
+        $nuevoR->FLC=$request->FLC;
+        $nuevoR->FLC100=$request->FLC1;
+        $nuevoR->ACA=$request->AC;
+        $nuevoR->FVC=$request->FVC;
+        $nuevoR->VVC=$request->VVC;
+        $nuevoR->BNC=$request->BNC;
+        $nuevoR->BNT=$request->BNT;
 
-        $nuevoR->ODer=$request->ODer;
-        $nuevoR->OIzq=$request->OIzq;
-        $nuevoR->ODav=$request->ODav;
-        $nuevoR->OIav=$request->OIav;
+        $nuevoR->PPCNA=$request->PPCNA;
+        $nuevoR->AAODER=$request->AA;
+        $nuevoR->PPCA=$request->PPCA;
+        $nuevoR->OIZQ=$request->Izq;
 
-        $nuevoR->oir=$request->oi;
-        $nuevoR->odr=$request->od;
-
-        $nuevoR->Tod=$request->Tod;
-        $nuevoR->Toi=$request->Toi;
-
-        $nuevoR->Mod=$request->Mod;
-        $nuevoR->Moi=$request->Moi;
-
-        $nuevoR->ODerd=$request->ODerd;
-        $nuevoR->OIzqd=$request->OIzqd;
-        $nuevoR->ODavd=$request->ODavd;
-        $nuevoR->OIavd=$request->OIavd;
+        $nuevoR->AO=$request->AO;
+        $nuevoR->ODER=$request->ODER;
+        $nuevoR->OIZ=$request->OIZQ;
 
         $nuevoR->save();
-        return redirect()->action([PruebasFuncionalesController::class, 'create']);
 
+        return redirect()->action([saludOcularController::class, 'create']);
     }
 
     /**

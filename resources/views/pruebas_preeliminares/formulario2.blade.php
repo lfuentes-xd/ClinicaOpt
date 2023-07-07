@@ -285,7 +285,7 @@
             <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 text-center">
 
                 <button type="submit"
-                    class="prim">
+                    class="prim tran">
                     Siguiente
                     <i class="fi fi-rr-angle-right"></i>
                 </button>

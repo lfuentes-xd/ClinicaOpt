@@ -195,14 +195,9 @@ M I T A D
 </div>
 
 <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 text-center">
-    <a class="inline-block bg-red-600 hover:bg-red-600 text-black font-semibold py-2 px-4 rounded"
-        href="{{ url('historial') }}" role="button">
-        <i class="fi fi-rr-cross-circle"></i>
-    Cancelar</a>
-
     <button type="submit"
-        class="prim">
-        Siguiente
-        <i class="fi fi-rr-angle-right"></i>
-    </button>
+    class="prim tran">
+    Siguiente
+    <i class="fi fi-rr-angle-right"></i>
+</button>
 </div>

@@ -10,7 +10,10 @@ use App\Http\Controllers\MarcasController;
 use App\Http\Controllers\HistorialClinicoController;
 // use App\Models\HistorialClinico;
 use App\Http\Controllers\pruebasController;
-
+use App\Http\Controllers\PruebasFuncionalesController;
+use App\Http\Controllers\refraccionController;
+use App\Http\Controllers\RXController;
+use App\Http\Controllers\saludOcularController;
 
 Route::get('/', function () {
     return view('bienvenida.first');
@@ -60,6 +63,10 @@ Route::resource('/Marcas',MarcasController::class);
 Route::resource('/historial',HistorialClinicoController::class);
 Route::resource('/pruebas', pruebasController::class);
 Route::resource('/productos',productosController::class)->middleware(['auth', 'verified']);
+Route::resource('/refraccion',refraccionController::class);
+Route::resource('/pruebasFuncionales', PruebasFuncionalesController::class);
+Route::resource('/RX',RXController::class);
+Route::resource('/SaludOcular', saludOcularController::class);
 
 Route::resource('/ventas',VentasController::class);
 Route::post('/obtener', [VentasController::class, 'datosProd']);

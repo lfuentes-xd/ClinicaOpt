@@ -15,7 +15,7 @@ class HistorialClinicoController extends Controller
     public function index()
     {
         $datosPac = HistorialClinico::All(); #mandamos todos los registros que tiene la bd.
-        return view('Historial_Clinico.index', ["historial" => $datosPac]); #le pasamos los datos en la variable.
+        return view('Historial_Clinico.index', ["datos" => $datosPac]); #le pasamos los datos en la variable.
     }
 
     /**
@@ -71,8 +71,7 @@ class HistorialClinicoController extends Controller
 
 
             $NuevoH->save();
-            return redirect()->action([pruebas::class, 'create']);
-
+            return redirect()->action([pruebasController::class, 'create']);
     }
 
     /**
@@ -80,6 +79,9 @@ class HistorialClinicoController extends Controller
      */
     public function show(string $id)
     {
+        $verHis = HistorialClinico::findorfail($id);
+
+        return view('Historial_Clinico.ver', ['ver' => $verHis]);
     }
 
     /**
@@ -87,7 +89,7 @@ class HistorialClinicoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
@@ -95,7 +97,34 @@ class HistorialClinicoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $editarHis =HistorialClinico::findorfail($id);
+
+        #motivo de la consulta
+        $editarHis->Vista_borrosa = $request->Vision;
+        $editarHis->Fatiga_Ocular = $request->Fatiga;
+        $editarHis->cefalea = $request->Cefalea;
+        $editarHis->Sintomas_externos = $request->Sintomas;
+        $editarHis->Alteraciones = $request->Alteraciones;
+        $editarHis->Vision_doble = $request->doble;
+        $editarHis->Desviacion_Ocular = $request->desviacion;
+        $editarHis->Problemas_lectura = $request->problemas;
+
+        #Historia Ocular
+        $editarHis->Historial_oc = $request->Historia;
+
+        #Historial Salud
+        $editarHis->Salud_general = $request->salud;
+        $editarHis->medicamentos = $request->salud;
+        $editarHis->medicamentos = $request->medicacion;
+        $editarHis->alergias = $request->Alergias;
+
+        #Impresion diagnositca
+        $editarHis->ocular = $request->ocular;
+        $editarHis->medica = $request->medica;
+        $editarHis->impresion_diag = $request->Impresion;
+
+        $editarHis->save();
+        return redirect()->action([HistorialClinicoController::class, 'index']);
     }
 
     /**
