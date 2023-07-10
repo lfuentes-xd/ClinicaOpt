@@ -154,7 +154,7 @@
 
     <button type="submit"
         class="prim tran">
-        Siguiente
+        regresar
         <i class="fi fi-rr-angle-right"></i>
     </button>
 </div>

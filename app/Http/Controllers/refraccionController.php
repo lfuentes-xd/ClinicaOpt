@@ -70,7 +70,8 @@ class refraccionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $verRefra = refraccion::findorfail($id);
+        return view('refraccion.modificar', ['refraccion' => $verRefra]);
     }
 
     /**
@@ -78,7 +79,7 @@ class refraccionController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
@@ -86,7 +87,35 @@ class refraccionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $modificarR = refraccion::findorfail($id);
+        $modificarR->OD=$request->OD;
+        $modificarR->OI=$request->IZ;
+        $modificarR->ODI=$request->ODI;
+        $modificarR->OII=$request->OII;
+
+        $modificarR->ODer=$request->ODer;
+        $modificarR->OIzq=$request->OIzq;
+        $modificarR->ODav=$request->ODav;
+        $modificarR->OIav=$request->OIav;
+
+        $modificarR->oir=$request->oi;
+        $modificarR->odr=$request->od;
+
+        $modificarR->Tod=$request->Tod;
+        $modificarR->Toi=$request->Toi;
+
+        $modificarR->Mod=$request->Mod;
+        $modificarR->Moi=$request->Moi;
+
+        $modificarR->ODerd=$request->ODerd;
+        $modificarR->OIzqd=$request->OIzqd;
+        $modificarR->ODavd=$request->ODavd;
+        $modificarR->OIavd=$request->OIavd;
+
+        $modificarR->save();
+        return redirect()->action([HistorialClinicoController::class, 'index']);
+
     }
 
     /**

@@ -57,7 +57,7 @@ class productosController extends Controller
         $NuevoP->Existencia=$request->Existencia;
 
         $NuevoP->save();
-        return redirect('Productos');
+        return redirect('productos');
     }
 
     /**

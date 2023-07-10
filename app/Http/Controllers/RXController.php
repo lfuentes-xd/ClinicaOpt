@@ -94,7 +94,8 @@ class RXController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $verdatos = Rx::findorfail($id);
+        return view('RX.modificar', ['rx'=>$verdatos]);
     }
 
     /**
@@ -110,7 +111,59 @@ class RXController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $editarR= Rx::findorfail($id);
+
+        $editarR->Esfera = $request->Esfera;
+        $editarR->Cilindro=$request->cilindro;
+        $editarR->Eje =$request->Eje;
+        $editarR->Add=$request->Add;
+        $editarR->DI=$request->DI;
+        $editarR->lejos=$request->lejos;
+        $editarR->cerca=$request->cerca;
+
+        $editarR->Esferai = $request->Esferai;
+        $editarR->Cilindroi=$request->cilindroi;
+        $editarR->Ejei =$request->Ejei;
+        $editarR->Addi=$request->Addi;
+        $editarR->DIi=$request->DIi;
+        $editarR->lejosi=$request->lejosi;
+        $editarR->cercai=$request->cercai;
+
+
+        $editarR->EsferaC=$request->EsferaC;
+        $editarR->CilindroC=$request->cilindroC;
+        $editarR->EjeC =$request->EjeC;
+        $editarR->AddC=$request->AddC;
+        $editarR->DIC=$request->DIC;
+        $editarR->lejosC=$request->lejosC;
+        $editarR->cercaC=$request->cercaC;
+
+        $editarR->EsferaCI = $request->EsferaCI;
+        $editarR->CilindroCI=$request->cilindroCI;
+        $editarR->EjeCI =$request->EjeCI;
+        $editarR->AddCI=$request->AddCI;
+        $editarR->DICI=$request->DICI;
+        $editarR->lejosCI=$request->lejosCI;
+        $editarR->cercaCI=$request->cercaCI;
+
+
+        $editarR->Tipo=$request->Tipo;
+        $editarR->Material=$request->Material;
+        $editarR->Color=$request->Color;
+        $editarR->RefractivoOD=$request->RefractivoD;
+        $editarR->RefractivoOI=$request->RefractivoI;
+        $editarR->VisionBinocular=$request->binocular;
+        $editarR->SaludOcular=$request->SaludOcular;
+
+        $editarR->I=$request->I;
+        $editarR->II=$request->II;
+        $editarR->III=$request->III;
+
+        $editarR->Observaciones=$request->Observaciones;
+
+        $editarR->save();
+
+        return redirect()->action([HistorialClinicoController::class, 'index']);
     }
 
     /**

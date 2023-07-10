@@ -36,43 +36,44 @@
                             <td class="py-2 px-4 border-b">{{ $pa->id }}</td>
                             <td class="py-2 px-4 border-b">{{ $pa->nombrePac }}</td>
                             <td class="py-2 px-4 border-b">{{ $pa->apellidoPac }}</td>
+
                             <td class="py-2 px-4 border-b">
                                 <a href="{{ route('historial.show', ['historial' => $pa->id]) }}"
+                                    class="prim tran ">
+                                    <i class="fi fi-rr-info"></i>
+                                    ver
+                                </a>
+                            </td>
+                            <td class="py-2 px-4 border-b">
+                                <a href="{{ asset('/pruebas/'.$pa->id) }}"
                                     class="prim tran">
                                     <i class="fi fi-rr-info"></i>
                                     ver
                                 </a>
                             </td>
                             <td class="py-2 px-4 border-b">
-                                <a href="{{ route('pacientes.show', ['paciente' => $pa->id]) }}"
+                                <a href="{{ asset('/refraccion/'.$pa->id)}}"
                                     class="prim tran">
                                     <i class="fi fi-rr-info"></i>
                                     ver
                                 </a>
                             </td>
                             <td class="py-2 px-4 border-b">
-                                <a href="{{ route('pacientes.show', ['paciente' => $pa->id]) }}"
+                                <a href="{{'/pruebasFuncionales/'.$pa->id}}"
                                     class="prim tran">
                                     <i class="fi fi-rr-info"></i>
                                     ver
                                 </a>
                             </td>
                             <td class="py-2 px-4 border-b">
-                                <a href="{{ route('pacientes.show', ['paciente' => $pa->id]) }}"
+                                <a href="{{asset('/SaludOcular/'.$pa->id)}}"
                                     class="prim tran">
                                     <i class="fi fi-rr-info"></i>
                                     ver
                                 </a>
                             </td>
                             <td class="py-2 px-4 border-b">
-                                <a href="{{ route('pacientes.show', ['paciente' => $pa->id]) }}"
-                                    class="prim tran">
-                                    <i class="fi fi-rr-info"></i>
-                                    ver
-                                </a>
-                            </td>
-                            <td class="py-2 px-4 border-b">
-                                <a href="{{ route('pacientes.show', ['paciente' => $pa->id]) }}"
+                                <a href="{{ asset('/RX/'.$pa->id) }}"
                                     class="prim tran">
                                     <i class="fi fi-rr-info"></i>
                                     ver

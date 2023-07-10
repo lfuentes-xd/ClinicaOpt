@@ -72,7 +72,8 @@ class PruebasFuncionalesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $verDatos = PruebasFuncionales::findorfail($id);
+        return view ('Pruebas_Funcionales.modificar', ['funcionales' => $verDatos]);
     }
 
     /**
@@ -88,7 +89,37 @@ class PruebasFuncionalesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $EditarR =PruebasFuncionales::findorfail($id);
+
+        $EditarR->FLL= $request->FLL;
+        $EditarR->FVL=$request->FVL;
+        $EditarR->VLL=$request->VLL;
+        $EditarR->BNL=$request->BNL;
+        $EditarR->BTL=$request->BTL;
+        $EditarR->CCF=$request->CCF;
+        $EditarR->ARN=$request->ARN;
+        $EditarR->ARP=$request->ARP;
+        $EditarR->ADDO=$request->ADDO;
+        $EditarR->FLC=$request->FLC;
+        $EditarR->FLC100=$request->FLC1;
+        $EditarR->ACA=$request->AC;
+        $EditarR->FVC=$request->FVC;
+        $EditarR->VVC=$request->VVC;
+        $EditarR->BNC=$request->BNC;
+        $EditarR->BNT=$request->BNT;
+
+        $EditarR->PPCNA=$request->PPCNA;
+        $EditarR->AAODER=$request->AA;
+        $EditarR->PPCA=$request->PPCA;
+        $EditarR->OIZQ=$request->Izq;
+
+        $EditarR->AO=$request->AO;
+        $EditarR->ODER=$request->ODER;
+        $EditarR->OIZ=$request->OIZQ;
+
+        $EditarR->save();
+
+        return redirect()->action([HistorialClinicoController::class, 'index']);
     }
 
     /**

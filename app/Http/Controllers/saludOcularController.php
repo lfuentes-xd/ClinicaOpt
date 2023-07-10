@@ -72,7 +72,8 @@ class saludOcularController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $verdatos= SaludOcular::findorfail($id);
+        return view('salud_ocular.modificar', ['salud'=>$verdatos]);
     }
 
     /**
@@ -80,7 +81,7 @@ class saludOcularController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
@@ -88,7 +89,37 @@ class saludOcularController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $editarR = SaludOcular::findorfail($id);
+
+        $editarR->Anexos=$request->ANEXOS;
+        $editarR->Conjuntiva=$request->Conjuntiva;
+        $editarR->Escalera=$request->Esclera;
+        $editarR->Cornea=$request->Cornea;
+        $editarR->TRL=$request->TLR;
+        $editarR->VonHerickT=$request->TD;
+        $editarR->VonHerickN=$request->ND;
+        $editarR->CamaraAnterior=$request->camD;
+        $editarR->Iris=$request->Iris;
+        $editarR-> Cristalino=$request->Cristalino;
+
+
+        $editarR->AnexosI=$request->ANEXOSi;
+        $editarR->ConjuntivaI=$request->Conjuntivai;
+        $editarR->EscaleraI=$request->Esclerai;
+        $editarR->CorneaI=$request->Corneai;
+        $editarR->TRLI=$request->TLRi;
+        $editarR->VonHerickTI=$request->TDi;
+        $editarR->VonHerickNI=$request->NDi;
+        $editarR->CamaraAnteriorI=$request->cami;
+        $editarR->IrisI=$request->Irisi;
+        $editarR-> CristalinoI=$request->Cristalinoi;
+
+        $editarR->Presionintra=$request->presion;
+
+        $editarR->save();
+
+        return redirect()->action([HistorialClinicoController::class, 'index']);
     }
 
     /**
