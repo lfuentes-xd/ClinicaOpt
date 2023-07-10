@@ -8,7 +8,7 @@
         <div class="">
             <form action="{{ asset('pruebas') }}" method="POST">
                 @csrf
-                @include('pruebas_preeliminares.verform')
+                @include('pruebas_preeliminares.formulario2')
             </form>
         </div>
     </div>

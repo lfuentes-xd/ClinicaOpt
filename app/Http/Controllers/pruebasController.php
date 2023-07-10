@@ -90,7 +90,7 @@ class pruebasController extends Controller
     {
         $verPruebas = Pruebas_preeliminares::findorfail($id);
 
-        return view('pruebas_preeliminares.alta2', ['pruebas' => $verPruebas]);
+        return view('pruebas_preeliminares.ver', ['pruebas' => $verPruebas]);
     }
 
     /**

@@ -80,7 +80,7 @@
                                 </a>
                             </td>
                             <td class="py-2 px-4 border-b">
-                                <form action="{{ asset('') }}" method="POST">
+                                <form action="{{ asset('/historial/'.$pa->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" name="eliminar" id="eliminar" class="btnR tran"

@@ -3,8 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\HistorialClinico;
+
 use App\Models\pacientes;
+
+use App\Models\HistorialClinico;
+use App\Models\SaludOcular;
+use App\Models\refraccion;
+use App\Models\RX;
+use App\Models\PruebasFuncionales;
+use App\Models\Pruebas_preeliminares;
+
 use Illuminate\Console\View\Components\Alert;
 
 class HistorialClinicoController extends Controller
@@ -132,6 +140,13 @@ class HistorialClinicoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        HistorialClinico::destroy($id);
+        RX::destroy($id);
+        PruebasFuncionales::destroy($id);
+        Pruebas_preeliminares::destroy($id);
+        refraccion::destroy($id);
+        SaludOcular::destroy($id);
+
+        return redirect('historial');
     }
 }
