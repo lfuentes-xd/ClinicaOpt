@@ -8,13 +8,13 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-x-auto">
 
             <a href="{{ asset('/historial/create') }}" class="prim tran">
                 <i class="fi fi-rr-add"></i>
                 Agregar nuevo</a>
             <br><br>
-            <table class="w-full max-w-768px border-collapse bg-white shadow-sm sm:rounded-lg table table-responsive">
+            <table class="w-full max-w-768px border-collapse bg-white shadow-sm sm:rounded-lg table-auto">
                 <thead>
                     <tr>
                         <th class="py-2 px-4 border-b">clave</th>

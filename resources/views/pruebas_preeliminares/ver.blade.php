@@ -6,6 +6,7 @@
     </x-slot>
     <div class="p-5 font-semibold bg-gray">
         <div class="">
+
             <form action="{{asset('/pruebas/'.$pruebas->id)}}" method="POST">
                 @csrf
                 @method('PATCH')

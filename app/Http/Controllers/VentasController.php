@@ -20,7 +20,7 @@ class VentasController extends Controller
      {
          $clave = $request->input('agregar');
 
-         $query = "SELECT claveProd, Grupo, Marca, Precio_vta FROM productos WHERE claveProd = :clave";
+         $query = "SELECT id, Grupo, Marca, Existencia, Precio_vta FROM productos WHERE id = :clave";
          $bindings = ['clave' => $clave];
          $producto = DB::select($query, $bindings);
 
@@ -28,9 +28,10 @@ class VentasController extends Controller
              // Resto del código...
 
              return response()->json([
-                 'clave' => $producto[0]->claveProd,
+                 'clave' => $producto[0]->id,
                  'Grupo' => $producto[0]->Grupo,
                  'Marca' => $producto[0]->Marca,
+                 'Existencia' => $producto[0]->Existencia,
                  'precio' => $producto[0]->Precio_vta
              ]);
          } else {

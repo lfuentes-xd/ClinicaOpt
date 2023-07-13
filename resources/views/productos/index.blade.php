@@ -11,7 +11,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-auto max-width-full">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-x-auto max-width-full">
 
             <a href="{{asset('productos/create')}}"
             class="prim tran mt-5" >
